@@ -4,7 +4,7 @@ const {Schema}=mongoose;
 const bebidaSchema=new Schema({
    marca:String,
    tipo:String,
-   años:String
+   anios:String
 
 
 });

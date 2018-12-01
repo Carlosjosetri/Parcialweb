@@ -12,4 +12,18 @@ control.index= async function (req,res,next) {
     
 }
 
+control.create=async function(req,res,next){
+    let be=new model();
+      be.marca=req.body.marca;
+      be.tipo=req.body.tipo;
+      be.anios=req.body.anios;
+    try {
+      await be.save();
+      return res.status(200).json({mesaje:"exito"});
+  } catch (error) {
+    return res.status(500).json({error:err});
+  }
+
+}
+
 module.exports=control;
