@@ -19,6 +19,7 @@ control.create=async function(req,res,next){
       be.anios=req.body.anios;
     try {
       await be.save();
+    
       return res.status(200).json({mesaje:"exito"});
   } catch (error) {
     return res.status(500).json({error:err});
