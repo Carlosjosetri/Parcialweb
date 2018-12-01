@@ -27,4 +27,14 @@ control.create=async function(req,res,next){
 
 }
 
+control.delete=async function(req,res,next){
+    let {id}=req.params;
+    try {
+        await model.remove({id:id});
+        return res.status(200).json({mesaje:"eliminado exito"})
+    } catch (error) {
+        return res.status(500).json({error:err});
+    }
+}
+
 module.exports=control;

@@ -16,10 +16,10 @@ document.forms.formB=addEventListener("submit",function (e) {
        }
 
     }).then(res => res.JSON)
-    .catch(err=>this.console.error(err))
+    .catch(err=>console.error(err))
     .then(response=>{
         alert("insertado conexito");
-        mostrar()
+      //  mostrar()
     })
 })
 
@@ -28,16 +28,17 @@ function mostrar(){
     fetch(url,{
         method:"GET",
         headers:{
-             "content-type":"aplication/json"
+             "content-type":"aplication/JSON"
         }
  
-     }).then(res => res.JSON)
-     .catch(err=>this.console.error(err))
+     }).then(res => res.JSON) 
+     .catch(err=>console.log(err))
      .then(response=>{
          let tbody=document.querySelector("#body");
          console.log(tbody);
          let filas="";
-         response.forEach(element => {
+         
+         response.ForEach(element => {
              filas=filas+`<tr>
              <td> ${element.marca}</td>
              <td> ${element.tipo}</td>
