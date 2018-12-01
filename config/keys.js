@@ -1,6 +1,5 @@
 module.exports={
-    mongod={
+    mongod:{
         uri:'mongodb//localhost:27017/database'
-
     }
 }
